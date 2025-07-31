@@ -7,6 +7,11 @@ const { OpenAI } = require('openai');
 const app = express();
 app.use(cors());
 app.use(express.json());
+app.use(express.static(path.join(__dirname, 'client/build')));
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'client/build/index.html'));
+});
 
 // Instantiate clients
 const useHF = !!process.env.HF_API_TOKEN;
