@@ -12,7 +12,7 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, 'client/build')));
 
 // Fallback for client-side routing (e.g., React Router)
-app.get('/*', (req, res) => {
+app.get('/*path', (req, res) => {
   res.sendFile(path.join(__dirname, 'client/build/index.html'));
 });
 
