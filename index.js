@@ -31,6 +31,7 @@ async function callGPT(messages) {
     try {
       const response = await hf.chatCompletion({
         model: 'deepseek-ai/DeepSeek-V3',
+        provider: 'together', // or 'fireworks-ai', 'novita', 'nebius', 'sambanova'
         messages
       });
       return response.choices[0].message.content;
