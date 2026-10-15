@@ -30,7 +30,7 @@ async function callGPT(messages) {
   if (useHF) {
     try {
       const response = await hf.chatCompletion({
-        model: 'deepseek-ai/DeepSeek-V3',
+        model: "deepseek-ai/DeepSeek-V4.1-Flash:novita",
         provider: 'together', // or 'fireworks-ai', 'novita', 'nebius', 'sambanova'
         messages
       });
